@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Square.png" type="Texture" id=1]
+[ext_resource path="res://Actors/Player/Player.gd" type="Script" id=2]
+
+[node name="Player" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Middle" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Collider" type="CollisionPolygon2D" parent="Middle"]
+polygon = PoolVector2Array( 15.1457, 15.3796, 13.5087, 16.3973, 11.7389, 16.766, -11.217, 16.7674, -13.2895, 16.1947, -14.725, 14.9853, -15.6055, 13.5964, -16.0024, 11.9469, -16.0033, -11.1632, -15.6391, -12.7283, -14.6253, -14.3426, -13.2364, -15.4402, -11.1411, -16.0138, 11.8368, -16.0101, 14.0023, -15.4797, 15.6375, -14.1097, 16.4993, -12.4745, 16.7865, -11.1045, 16.754, 11.9398, 16.2666, 13.9491 )
+
+[node name="Sprite" type="NinePatchRect" parent="Middle"]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 1008.0
+margin_bottom = 1008.0
+rect_scale = Vector2( 0.032, 0.032 )
+texture = ExtResource( 1 )
+patch_margin_left = 256
+patch_margin_top = 256
+patch_margin_right = 256
+patch_margin_bottom = 256
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="Area2D" parent="."]
+position = Vector2( 720, 0 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Collider" type="CollisionPolygon2D" parent="Right"]
+polygon = PoolVector2Array( 15.1457, 15.3796, 13.5087, 16.3973, 11.7389, 16.766, -11.217, 16.7674, -13.2895, 16.1947, -14.725, 14.9853, -15.6055, 13.5964, -16.0024, 11.9469, -16.0033, -11.1632, -15.6391, -12.7283, -14.6253, -14.3426, -13.2364, -15.4402, -11.1411, -16.0138, 11.8368, -16.0101, 14.0023, -15.4797, 15.6375, -14.1097, 16.4993, -12.4745, 16.7865, -11.1045, 16.754, 11.9398, 16.2666, 13.9491 )
+
+[node name="Sprite" type="NinePatchRect" parent="Right"]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 1008.0
+margin_bottom = 1008.0
+rect_scale = Vector2( 0.032, 0.032 )
+texture = ExtResource( 1 )
+patch_margin_left = 256
+patch_margin_top = 256
+patch_margin_right = 256
+patch_margin_bottom = 256
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Area2D" parent="."]
+position = Vector2( -720, 0 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="Collider" type="CollisionPolygon2D" parent="Left"]
+polygon = PoolVector2Array( 15.1457, 15.3796, 13.5087, 16.3973, 11.7389, 16.766, -11.217, 16.7674, -13.2895, 16.1947, -14.725, 14.9853, -15.6055, 13.5964, -16.0024, 11.9469, -16.0033, -11.1632, -15.6391, -12.7283, -14.6253, -14.3426, -13.2364, -15.4402, -11.1411, -16.0138, 11.8368, -16.0101, 14.0023, -15.4797, 15.6375, -14.1097, 16.4993, -12.4745, 16.7865, -11.1045, 16.754, 11.9398, 16.2666, 13.9491 )
+
+[node name="Sprite" type="NinePatchRect" parent="Left"]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 1008.0
+margin_bottom = 1008.0
+rect_scale = Vector2( 0.032, 0.032 )
+texture = ExtResource( 1 )
+patch_margin_left = 256
+patch_margin_top = 256
+patch_margin_right = 256
+patch_margin_bottom = 256
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="area_shape_entered" from="Middle" to="." method="on_collider_enter" binds= [ "Middle" ]]
+[connection signal="area_shape_entered" from="Right" to="." method="on_collider_enter" binds= [ "Right" ]]
+[connection signal="area_shape_entered" from="Left" to="." method="on_collider_enter" binds= [ "Left" ]]

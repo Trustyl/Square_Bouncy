@@ -1,0 +1,95 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "GameTheme",
+"language": "GDScript",
+"path": "res://Themes/GameTheme.gd"
+}, {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://git_api.gdns"
+} ]
+_global_script_class_icons={
+"GameTheme": "",
+"GitAPI": ""
+}
+
+[application]
+
+config/name="Bouncy Square"
+config/description="A quick arcade game made to learn the Godot engine."
+run/main_scene="res://Game.tscn"
+config/icon="res://Square.png"
+
+[audio]
+
+default_bus_layout="res://Audio/Bus Layout.tres"
+
+[autoload]
+
+Arena="*res://Arena.gd"
+AutoRespawner="*res://Lifecycle/AutoRespawner.gd"
+Collections="*res://Utilities/Collections.gd"
+SaveDataManager="*res://Lifecycle/SaveDataManager.gd"
+ScoreManager="*res://ScoreManager.gd"
+StateManager="*res://Lifecycle/StateManager.gd"
+TimeFormatter="*res://Utilities/TimeFormatter.gd"
+ViewportAdjuster="*res://GUI/ViewportAdjuster.gd"
+
+[display]
+
+window/size/width=720
+window/size/height=405
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[gdnative]
+
+singletons=[ "res://git_api.gdnlib" ]
+
+[input]
+
+player_left={
+"deadzone": 0.3,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":6,"axis_value":1.0,"script":null)
+ ]
+}
+player_right={
+"deadzone": 0.3,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":7,"axis_value":1.0,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_2="Player"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=1
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.133333, 0.133333, 0.133333, 1 )
+environment/default_environment="res://Default Environment.tres"

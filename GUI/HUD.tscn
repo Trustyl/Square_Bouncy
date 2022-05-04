@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/TimeCurrentPresenter.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Fonts/Permanent Marker/Permanent Marker - Big.tres" type="DynamicFont" id=2]
+[ext_resource path="res://GUI/Fonts/Permanent Marker/Permanent Marker - Small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://GUI/TimeBestPresenter.gd" type="Script" id=4]
+[ext_resource path="res://Lifecycle/Tweens/FadeInOnFirstRespawn.gd" type="Script" id=5]
+
+[node name="HUD" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 12
+custom_constants/margin_left = 25
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 25.0
+margin_top = 12.0
+margin_right = 695.0
+margin_bottom = 405.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 670.0
+margin_bottom = 74.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 173.0
+margin_bottom = 74.0
+custom_constants/separation = -20
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 173.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 3 )
+text = "Current Time"
+
+[node name="Current Time" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 173.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 2 )
+text = "X:XX.XX"
+script = ExtResource( 1 )
+
+[node name="Tween" type="Tween" parent="VBoxContainer/HBoxContainer/VBoxContainer/Current Time"]
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 177.0
+margin_right = 493.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 497.0
+margin_right = 670.0
+margin_bottom = 74.0
+custom_constants/separation = -20
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 173.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 3 )
+text = "Best Time"
+align = 2
+
+[node name="Best Time" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 4.0
+margin_right = 173.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 2 )
+text = "X:XX.XX"
+align = 2
+script = ExtResource( 4 )

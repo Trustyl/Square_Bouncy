@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/8Bit Dungeon Boss - Kevin Macleod.ogg-bd1fa66cc164f50076813b1787d3d234.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/8Bit Dungeon Boss - Kevin Macleod.ogg"
+dest_files=[ "res://.import/8Bit Dungeon Boss - Kevin Macleod.ogg-bd1fa66cc164f50076813b1787d3d234.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
